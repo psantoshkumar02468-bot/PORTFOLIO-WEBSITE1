@@ -4,180 +4,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Santosh - Developer Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    <title>Santosh- Developer Portfolio</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVIGATION ================= */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 70px;
+            background-color: rgb(0, 0, 44);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .right ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            color: rgb(170, 107, 228);
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .first_Section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 0 10%;
+            gap: 50px;
+        }
+
+        .left_Section {
+            flex: 1;
+            font-size: 2.5rem;
+        }
+
+        .purple { color: blueviolet; }
+        #element { color: rgb(170, 107, 228); }
+
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 6px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: rgb(170, 107, 228);
+        }
+
+        .right_Section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .right_Section img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(170, 107, 228, 0.3);
+        }
+
+        hr {
+            border: 0;
+            background-color: rgba(0, 153, 255, 0.3);
+            height: 1px;
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        /* ================= EXPERIENCE SECTION ================= */
+        .second_section {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .gray { color: gray; }
+        .second_section h1 { margin-bottom: 50px; }
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid rgb(170, 107, 228);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-box {
+            height: 80px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-box img, .icon-box svg {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .experience-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-card p {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: #080808;
+            padding: 60px 10% 20px;
+            margin-top: 100px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 { margin-bottom: 20px; color: rgb(170, 107, 228); }
+
+        .footer-content ul { list-style: none; }
+        .footer-content ul li { margin-bottom: 10px; }
+        .footer-content a { color: #aaa; text-decoration: none; transition: 0.3s; }
+        .footer-content a:hover { color: white; }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-item img {
+            width: 20px;
+            filter: invert(1);
+        }
+
+        .footer_rights {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: gray;
+            font-size: 0.9rem;
+        }
+
+        /* ================= MEDIA QUERIES ================= */
+
+        @media (max-width: 992px) {
+            .first_Section {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .left_Section { font-size: 2rem; }
+            .button-group { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn { display: flex; }
+            
+            .right {
+                display: none; /* Toggle this with JS */
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgb(0, 0, 44);
+                padding: 20px;
+                border-bottom: 1px solid #333;
+            }
+
+            .right.active { display: block; }
+
+            .right ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .timeline-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<style>
-  .btn a{
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-  }
-
-    /* ================= RESPONSIVE DESIGN ================= */
-
-/* GLOBAL FIX */
-img{
-    max-width: 100%;
-    height: auto;
-}
-
-/* ---------- TABLET ---------- */
-@media (max-width: 1024px){
-
-    .first_Section{
-        flex-direction: column;
-        margin: 40px 20px;
-        text-align: center;
-    }
-
-    .first_Section > div{
-        width: 100%;
-    }
-
-    .left_Section{
-        font-size: 2rem;
-    }
-
-    .right_Section img{
-        width: 70%;
-        margin: auto;
-    }
-
-    /* TIMELINE FIX */
-    .second_section{
-        margin: 40px 20px;
-        height: auto;
-    }
-
-    .second_section .box{
-        flex-wrap: wrap;
-        height: auto;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .second_section .vertical{
-        margin: 0;
-        width: 40%;
-        height: auto;
-        background: none;
-    }
-
-    /* remove absolute positioning */
-    .vertical_text,
-    .vertical_text1,
-    .vertical_text2,
-    .vertical_text3,
-    .vertical_desc,
-    .vertical_desc1,
-    .vertical_desc2,
-    .vertical_desc3{
-        position: static;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .physics,
-    .airforce,
-    .dsa,
-    .Programmer{
-        position: static;
-        display: block;
-        margin: auto;
-    }
-
-    /* FOOTER */
-    .footer{
-        flex-wrap: wrap;
-        padding: 20px;
-        text-align: center;
-    }
-
-    footer > div{
-        width: 100%;
-    }
-}
-
-
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px){
-
-    /* NAVBAR */
-    nav{
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .right ul{
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    nav ul li{
-        margin: 5px 0;
-    }
-
-    /* HERO SECTION */
-    .first_Section{
-        flex-direction: column;
-        margin: 20px;
-    }
-
-    .left_Section{
-        font-size: 1.5rem;
-    }
-
-    .button{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .btn{
-        width: 80%;
-    }
-
-    /* TIMELINE STACK */
-    .second_section .box{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .second_section .vertical{
-        width: 90%;
-    }
-
-    /* FOOTER */
-    .footer{
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .social-list{
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-}
-</style>
 
 <body>
     <header>
         <nav>
             <div class="left">Santosh's Portfolio</div>
-            <div class="right">
+            <div class="menu-btn" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="right" id="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a target="_blank" href="mailto:psantoshkumar02468@gmail.com">Contact Me</a></li>
+                    <li><a target="_blank" href="mailto:psantoshkumar02468@gmail.com">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -187,214 +305,111 @@ img{
         <section class="first_Section">
             <div class="left_Section">
                 Hi, I am <span class="purple">Santosh</span>
-                <div>and I am a passionate <span class="purple1"></span>
-                    <span id="element"></span>
-                    <div class="button">
-                        <button class="btn"><a target="_blank" href="Santosh_resume.pdf">Download Resume</a></button>
-                        <button  class="btn"><a target="_blank" href="https://github.com/psantoshkumar02468-bot">Visit GitHub</a></button>
-                    </div>
+                <div>and I am a <span id="element"></span></div>
+                <div class="button-group">
+                    <button class="btn"><a href="Santosh_resume.pdf">Resume</a></button>
+                    <button class="btn"><a href="https://github.com/psantoshkumar02468-bot">GitHub</a></button>
                 </div>
             </div>
             <div class="right_Section">
-                <img src="san.png" alt="photo" width="80%">
+                <img src="san.png" alt="Santosh Profile">
             </div>
         </section>
 
         <hr>
+
         <section class="second_section">
-            <span class="gray">What i have done so far</span>
+            <span class="gray">My Journey</span>
             <h1>Learning Experience</h1>
-            <div class="box">
-                <div class="vertical">
-                    <svg class="physics" width="40" height="320" viewBox="0 0 300 300"
-                        xmlns="http://www.w3.org/2000/svg">
-
-                        <defs>
-                            <!-- Gradients -->
-                            <radialGradient id="nucleusGrad" cx="50%" cy="40%" r="60%">
-                                <stop offset="0%" stop-color="#5df2ff" />
-                                <stop offset="60%" stop-color="#00bcd4" />
-                                <stop offset="100%" stop-color="#006064" />
-                            </radialGradient>
-
-                            <radialGradient id="electronGrad" cx="40%" cy="30%" r="70%">
-                                <stop offset="0%" stop-color="#a0ffff" />
-                                <stop offset="60%" stop-color="#00bcd4" />
-                                <stop offset="100%" stop-color="#004d57" />
-                            </radialGradient>
-
-                            <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#00e5ff" />
-                                <stop offset="100%" stop-color="#006064" />
-                            </linearGradient>
-
-                            <!-- Glow -->
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="2.5" result="blur" />
-                                <feMerge>
-                                    <feMergeNode in="blur" />
-                                    <feMergeNode in="SourceGraphic" />
-                                </feMerge>
-                            </filter>
-                        </defs>
-
-                        <!-- Rotating group -->
-                        <g>
-                            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150"
-                                dur="6s" repeatCount="indefinite" />
-
-                            <!-- Orbits -->
-                            <ellipse cx="150" cy="150" rx="110" ry="50" fill="none" stroke="url(#orbitGrad)"
-                                stroke-width="4" transform="rotate(0 150 150)" filter="url(#glow)" />
-
-                            <ellipse cx="150" cy="150" rx="110" ry="50" fill="none" stroke="url(#orbitGrad)"
-                                stroke-width="4" transform="rotate(60 150 150)" filter="url(#glow)" />
-
-                            <ellipse cx="150" cy="150" rx="110" ry="50" fill="none" stroke="url(#orbitGrad)"
-                                stroke-width="4" transform="rotate(120 150 150)" filter="url(#glow)" />
-
-                            <!-- Electrons -->
-                            <circle cx="260" cy="150" r="10" fill="url(#electronGrad)" filter="url(#glow)" />
-
-                            <circle cx="85" cy="65" r="10" fill="url(#electronGrad)" filter="url(#glow)" />
-
-                            <circle cx="95" cy="240" r="10" fill="url(#electronGrad)" filter="url(#glow)" />
-                        </g>
-
-                        <!-- Nucleus (static center) -->
-                        <circle cx="150" cy="150" r="30" fill="url(#nucleusGrad)" filter="url(#glow)" />
-
-                    </svg>
-                    <div class="vertical_text">
-                        Physics Graduate (2022-2025)
+            
+            <div class="timeline-container">
+                <!-- Physics Card -->
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <svg width="60" height="60" viewBox="0 0 300 300">
+                            <circle cx="150" cy="150" r="30" fill="cyan" />
+                            <ellipse cx="150" cy="150" rx="100" ry="40" fill="none" stroke="cyan" stroke-width="2" />
+                            <ellipse cx="150" cy="150" rx="100" ry="40" fill="none" stroke="cyan" stroke-width="2" transform="rotate(60 150 150)"/>
+                            <ellipse cx="150" cy="150" rx="100" ry="40" fill="none" stroke="cyan" stroke-width="2" transform="rotate(120 150 150)"/>
+                        </svg>
                     </div>
-                    <div class="vertical_desc">
-                        B.Sc. in Physics (Honours)
-                        Ganjam Degree College | 71%
-
-                        I completed my degree with a 71% score, specializing in core subjects like classical mechanics,
-                        thermodynamics, and electromagnetism.
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="airforce" src="Indian_Air_Force-Logo.wine.svg" alt="">
-                    <div class="vertical_text1">
-                        Indian Air Force Qualified (2023)
-                    </div>
-                    <div class="vertical_desc1">
-                        Indian Air Force Selection
-                        Qualified Candidate
-
-                        I successfully cleared the highly competitive Indian Air Force recruitment examination, proving
-                        my aptitude and dedication. Although I did not join due to specific medical standards regarding
-                        Color Vision (CP-4), qualifying for such a prestigious national merit list reflects my
-                        discipline and ability to excel under rigorous selection criteria.
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="dsa" src="dsa_logo.svg" alt="dsa">
-                    <div class="vertical_text2">
-                        Data Structures & Algorithms in C (2025)
-                    </div>
-                    <div class="vertical_desc2">
-                        Data Structures & Algorithms in C
-                        Core Logic Development | 2025
-
-                        During this period, implementing essential data structures like Linked Lists, Stacks, and Queues
-                        from scratch using
-                        the C language. By managing manual memory allocation and pointer logic, I gained a deep
-                        understanding of how data is stored and manipulated at a low level.
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="Programmer" src="Programmer.png" alt="Programmer">
-                    <div class="vertical_text3">
-                        Full-Stack Web Development (2026)
-                    </div>
-                    <div class="vertical_desc3">
-                        Full-Stack Web Development
-                        Modern Web Applications
-
-                        I specialize in building responsive, end-to-end web applications using the MERN stack and modern
-                        frontend tools. By combining HTML, CSS, and JavaScript with backend technologies like Node.js.
-                        and Express.js
-                    </div>
+                    <h3>Physics Graduate (2022-25)</h3>
+                    <p>B.Sc. Honours at Ganjam Degree College. Specialized in classical mechanics and thermodynamics with 71%.</p>
                 </div>
 
+                <!-- Airforce Card -->
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <img src="Indian_Air_Force-Logo.wine.svg" alt="IAF">
+                    </div>
+                    <h3>Air Force Qualified (2023)</h3>
+                    <p>Cleared the recruitment exam. Demonstrated discipline and excellence under rigorous selection criteria.</p>
+                </div>
+
+                <!-- DSA Card -->
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <img src="dsa_logo.svg" alt="DSA">
+                    </div>
+                    <h3>DSA in C (2025)</h3>
+                    <p>Mastered Linked Lists, Stacks, and manual memory management to understand low-level data manipulation.</p>
+                </div>
+
+                <!-- Web Dev Card -->
+                <div class="experience-card">
+                    <div class="icon-box">
+                        <img src="Programmer.png" alt="Web Dev">
+                    </div>
+                    <h3>Full-Stack Dev (2026)</h3>
+                    <p>Specializing in the MERN stack and modern frontend tools to build responsive end-to-end applications.</p>
+                </div>
             </div>
         </section>
-
     </main>
 
-
     <footer>
-        <div class="footer">
-            <div class="footer_first">
-                <h3>Santosh's Developer <br> Portfolio</h3>
+        <div class="footer-content">
+            <div>
+                <h3>Santosh Portfolio</h3>
+                <p>Building digital experiences with logic and creativity.</p>
             </div>
-            <div class="footer_second">
+            <div>
+                <h3>Quick Links</h3>
                 <ul>
-
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a target="_blank" href="mailto:psantoshkumar02468@gmail.com">Contact Me</a></li>
                 </ul>
             </div>
-          <div class="footer_third">
-    <div></div>
-
-    <ul class="social-list">
-        <li>
-            <a target="_blank" href="https://www.linkedin.com/in/p-santosh-kumar-9105b637b/">
-                <img src="icons8-linkedin (1).svg" alt="LinkedIn">
-                <span>LinkedIn</span>
-            </a>
-        </li>
-
-        <li>
-            <a target="_blank" href="https://github.com/psantoshkumar02468-bot">
-                <img class="github" src="icons8-github.svg" alt="GitHub">
-                <span>GitHub</span>
-            </a>
-        </li>
-
-        <li>
-            <a target="_blank" href="mailto:psantoshkumar02468@gmail.com">
-                <img src="icons8-gmail-logo-94.png" alt="Email">
-                <span>Email</span>
-            </a>
-        </li>
-
-        <li>
-            <a target="_blank" href="https://www.instagram.com/p_santosh_kumar_3133/">
-                <img src="icons8-instagram.svg" alt="Instagram">
-                <span>Instagram</span>
-            </a>
-        </li>
-    </ul>
-</div>
-</div>
-
-</footer>
-<div class="footer_rights">
-   Copyright &#169; santosh.com | All rights reserved
-</div>
-
+            <div class="social-links">
+                <h3>Connect</h3>
+                <a href="https://www.linkedin.com/in/p-santosh-kumar-9105b637b/" class="social-item"><img src="icons8-linkedin (1).svg"> LinkedIn</a>
+                <a href="https://github.com/psantoshkumar02468-bot" class="social-item"><img src="icons8-github.svg"> GitHub</a>
+                <a href="https://www.instagram.com/p_santosh_kumar_3133/" class="social-item"><img src="icons8-instagram.svg"> Instagram</a>
+            </div>
+        </div>
+        <div class="footer_rights">
+            Copyright &#169; 2026 Santosh | All rights reserved
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
-    <!-- Setup and start animation! -->
     <script>
+        // Typed.js Animation
         var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Java Development', 'Video Editor', 'Software Developer', 'DSA'],
-            //   typeSpeed: 50,
+            strings: ['Web Developer', 'Java Developer', 'Video Editor', 'Software Developer'],
             typeSpeed: 50,
             backSpeed: 30,
-            backDelay: 1000,
             loop: true
         });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
     </script>
-
 </body>
-
 </html>
