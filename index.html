@@ -14,6 +14,157 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
   }
+
+    /* ================= RESPONSIVE DESIGN ================= */
+
+/* GLOBAL FIX */
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1024px){
+
+    .first_Section{
+        flex-direction: column;
+        margin: 40px 20px;
+        text-align: center;
+    }
+
+    .first_Section > div{
+        width: 100%;
+    }
+
+    .left_Section{
+        font-size: 2rem;
+    }
+
+    .right_Section img{
+        width: 70%;
+        margin: auto;
+    }
+
+    /* TIMELINE FIX */
+    .second_section{
+        margin: 40px 20px;
+        height: auto;
+    }
+
+    .second_section .box{
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .second_section .vertical{
+        margin: 0;
+        width: 40%;
+        height: auto;
+        background: none;
+    }
+
+    /* remove absolute positioning */
+    .vertical_text,
+    .vertical_text1,
+    .vertical_text2,
+    .vertical_text3,
+    .vertical_desc,
+    .vertical_desc1,
+    .vertical_desc2,
+    .vertical_desc3{
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .physics,
+    .airforce,
+    .dsa,
+    .Programmer{
+        position: static;
+        display: block;
+        margin: auto;
+    }
+
+    /* FOOTER */
+    .footer{
+        flex-wrap: wrap;
+        padding: 20px;
+        text-align: center;
+    }
+
+    footer > div{
+        width: 100%;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px){
+
+    /* NAVBAR */
+    nav{
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .right ul{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav ul li{
+        margin: 5px 0;
+    }
+
+    /* HERO SECTION */
+    .first_Section{
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .left_Section{
+        font-size: 1.5rem;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .btn{
+        width: 80%;
+    }
+
+    /* TIMELINE STACK */
+    .second_section .box{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .second_section .vertical{
+        width: 90%;
+    }
+
+    /* FOOTER */
+    .footer{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social-list{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
 </style>
 
 <body>
