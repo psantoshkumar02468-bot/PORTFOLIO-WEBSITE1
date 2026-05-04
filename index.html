@@ -278,24 +278,10 @@
                 grid-template-columns: 1fr;
             }
         }
-
+        
+/* Ths mobail screen...*/
         @media (max-width: 412px) and (max-height: 915px) {
     
-    .first_Section {
-        display: flex;
-        flex-direction: column-reverse; /* Stacks image on top of text */
-        height: auto; /* Allows the container to grow */
-    }
-
-    .left_Section {
-        /* This increases the height of the text area */
-        min-height: 400px; 
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
     .right_Section {
         /* Set a specific height for the image container */
         height: 350px; 
@@ -430,8 +416,8 @@
         // Typed.js Animation
         var typed = new Typed('#element', {
             strings: ['Web Developer', 'Java Developer', 'Video Editor', 'Software Developer'],
-            typeSpeed: 50,
-            backSpeed: 30,
+            typeSpeed: 60,
+            backSpeed: 60,
             loop: true
         });
 
